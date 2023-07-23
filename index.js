@@ -28,3 +28,31 @@ console.log(average([1, 2, 3, 4, 5, 6, 7, 8, 9]));
 where one side’s sum is equal to the other’s. Example: [1,2,3,4,10] → true ( between indices 3&4),
 but [1,2,4,2,1] → false . */
 
+function balancePoint(arr) {
+    var sum = 0;
+    var leftSum = 0;
+    for (var i = 0; i < arr.length; i++) {
+        sum += arr[i];
+    }
+    for (var i = 0; i < arr.length; i++) {
+        if (leftSum == sum - leftSum) {
+            return true;
+        }
+        leftSum += arr[i];
+    }
+    return false;
+}
+
+//Example
+console.log(balancePoint([1, 2, 3, 4, 10]));
+console.log(balancePoint([1, 2, 4, 2, 1]));
+
+//We set var sum to 0
+//We set var leftSum to 0
+//We loop through the array and add each value to sum
+//We loop through the array and check if leftSum is equal to sum - leftSum
+//If it is, we return true
+//If not, we add the value of the current index to leftSum
+//If we never return true, we return false
+
+//#####################################################################################################################
