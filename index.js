@@ -20,3 +20,11 @@ console.log(average([1, 2, 3, 4, 5, 6, 7, 8, 9]));
 //We return the sum divided by the length of the array
 
 //#####################################################################################################################
+
+//2.
+//Balance Point
+
+/* Write a function that returns whether the given array has a balance point between indices,
+where one side’s sum is equal to the other’s. Example: [1,2,3,4,10] → true ( between indices 3&4),
+but [1,2,4,2,1] → false . */
+
