@@ -62,3 +62,32 @@ console.log(balancePoint([1, 2, 4, 2, 1]));
 
 /* Here, a balance point is on an index, not between indices. Return the balance index where sums are equal on either side
 (exclude its own value). Return -1 if none exist. Ex.: [-2,5,7,0,3] → 2 , but [9,9] → -1 . */
+
+function balanceIndex(arr) {
+    var sum = 0;
+    var leftSum = 0;
+    for (var i = 0; i < arr.length; i++) {
+        sum += arr[i];
+    }
+    for (var i = 0; i < arr.length; i++) {
+        if (leftSum == sum - leftSum - arr[i]) {
+            return i;
+        }
+        leftSum += arr[i];
+    }
+    return -1;
+}
+
+//Example
+console.log(balanceIndex([-2, 5, 7, 0, 3]));
+console.log(balanceIndex([9, 9]));
+
+//We set var sum to 0
+//We set var leftSum to 0
+//We loop through the array and add each value to sum
+//We loop through the array and check if leftSum is equal to sum - leftSum - arr[i]
+//If it is, we return i
+//If not, we add the value of the current index to leftSum
+//If we never return i, we return -1
+
+//#####################################################################################################################
